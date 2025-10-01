@@ -95,7 +95,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                     ""name"": ""Dpad"",
                     ""type"": ""PassThrough"",
                     ""id"": ""c28dad5a-4545-4f5a-b7a6-67d4ca0a9d46"",
-                    ""expectedControlType"": ""Dpad"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -569,6 +569,17 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""4b0105c0-b160-4ded-8169-91008c89b196"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Throttle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""23c462a6-d9b2-4140-ae65-03d64daa6a0d"",
                     ""path"": ""<Logitech G29 Racing Wheel>/clutchAxis"",
                     ""interactions"": """",
@@ -585,6 +596,17 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Logitech G29"",
+                    ""action"": ""Brake"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3865e627-1929-463e-b7d3-a213463c5039"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
                     ""action"": ""Brake"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
