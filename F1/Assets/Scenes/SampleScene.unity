@@ -3249,43 +3249,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1490238684}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff1aee84063dc6e40a93a4aa1eaba4e3, type: 3}
+  m_Script: {fileID: 11500000, guid: c9bb2250f7b98584b8e49b0365225096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inputControllerReader: {fileID: 11400000, guid: 8268bb9eff5a1954492cd4817fb37528, type: 2}
-  frontLeftWheel: {fileID: 1319953832}
-  frontRightWheel: {fileID: 1576407958}
-  rearLeftWheel: {fileID: 1770351214}
-  rearRightWheel: {fileID: 1975793132}
-  frontLeftVisual: {fileID: 1502424750}
-  frontRightVisual: {fileID: 1502424749}
-  rearLeftVisual: {fileID: 1502424748}
-  rearRightVisual: {fileID: 1502424747}
-  maxMotorTorque: 1500
-  maxSteeringAngle: 30
-  brakeTorque: 2000
-  centerOfMassOffset: -0.5
-  steeringSensitivity: 1.5
---- !u!4 &1502424747 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8772668851065029863, guid: dd9124e450524484b97391e63c1a57ad, type: 3}
-  m_PrefabInstance: {fileID: 1490238683}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1502424748 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -6477294147924987569, guid: dd9124e450524484b97391e63c1a57ad, type: 3}
-  m_PrefabInstance: {fileID: 1490238683}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1502424749 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -3472181466503324254, guid: dd9124e450524484b97391e63c1a57ad, type: 3}
-  m_PrefabInstance: {fileID: 1490238683}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1502424750 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -7401697507201314829, guid: dd9124e450524484b97391e63c1a57ad, type: 3}
-  m_PrefabInstance: {fileID: 1490238683}
-  m_PrefabAsset: {fileID: 0}
+  axleInfos:
+  - leftWheel: {fileID: 1319953832}
+    rightWheel: {fileID: 1576407958}
+    motor: 0
+    steering: 1
+  - leftWheel: {fileID: 1770351214}
+    rightWheel: {fileID: 1975793132}
+    motor: 1
+    steering: 0
+  maxMotorTorque: 0
+  maxSteeringAngle: 0
 --- !u!1 &1576407956
 GameObject:
   m_ObjectHideFlags: 0
