@@ -31,7 +31,7 @@ public class CarSound : MonoBehaviour
         float pitch = Mathf.Lerp(minEnginePitch, maxEnginePitch, speed / 20f);
         engineAudioSource.pitch = pitch;
         float throttleInput = Mathf.Abs(inputControllerReader.Throttle);
-        float brakeInput = Mathf.Abs(inputControllerReader.Throttle);
+        float brakeInput = Mathf.Abs(inputControllerReader.Brake);
         if (throttleInput > brakeInput)
         {
             engineAudioSource.volume = 0.3f + (throttleInput * 0.7f);
@@ -41,8 +41,7 @@ public class CarSound : MonoBehaviour
             engineAudioSource.volume = 0.3f + (brakeInput * 0.7f);
         }
     }
-
-    private void HandleBrakeSound()
+    void HandleBrakeSound()
     {
         Vector3 localVelocity = transform.InverseTransformDirection(carRigidbody.linearVelocity);
         bool isMovingForward = -localVelocity.z > brakeSoundThreshold;
