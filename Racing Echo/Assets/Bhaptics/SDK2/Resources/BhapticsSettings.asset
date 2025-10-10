@@ -14,14 +14,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   appName: Racing Echo
   appId: 68e829f13219230838fedad7
-  apiKey: fn3sCVYQ9q8OaXwT5B9v
-  lastDeployVersion: 1
+  apiKey: isJx1oCXR4aO9saCp8gc
+  lastDeployVersion: 2
   eventData:
-  - durationMillis: 0
-    key: car
+  - durationMillis: 100
+    key: collision_impact
     description: 
-    isAudio: 0
-    updateTime: 1760046634082
+    isAudio: 1
+    updateTime: 1760052617488
     positions: []
-  defaultDeploy: '{"status":true,"message":{"id":"68e82e323219230838ff756b","createTime":1760046642076,"name":"Racing
-    Echo","creator":"zCmz7NwUzyLzpavhpSWQzAj03Am2","workspaceId":"68e829f13219230838fedad7","version":1,"disableValidation":false,"hapticMappings":[{"id":"68e82e323219230838ff756c","deployId":"68e82e323219230838ff756b","enable":true,"intensity":100,"key":"car","category":"Default","description":"","updateTime":1760046634082,"tactFilePatterns":[],"audioFilePatterns":[],"eventTime":0}],"categoryOptions":["Default"],"description":"1"},"errorMessage":null,"timestamp":1760046651051,"code":200}'
+  - durationMillis: 180
+    key: engine_vibration
+    description: 
+    isAudio: 1
+    updateTime: 1760052875005
+    positions: []
+  - durationMillis: 180
+    key: landing_impact
+    description: 
+    isAudio: 1
+    updateTime: 1760052973182
+    positions: []
+  - durationMillis: 100
+    key: brake_feedback
+    description: 
+    isAudio: 1
+    updateTime: 1760053062399
+    positions: []
+  - durationMillis: 80
+    key: ui_button_click
+    description: 
+    isAudio: 1
+    updateTime: 1760053273165
+    positions: []
+  - durationMillis: 140
+    key: car_accident
+    description: 
+    isAudio: 1
+    updateTime: 1760053525986
+    positions: []
+  - durationMillis: 180
+    key: jump_liftoff
+    description: 
+    isAudio: 1
+    updateTime: 1760053796128
+    positions: []
+  defaultDeploy: "{\"status\":true,\"message\":{\"id\":\"68e8c5aa3219230838085c5c\",\"createTime\":1760085418035,\"name\":\"Racing
+    Echo\",\"creator\":\"zCmz7NwUzyLzpavhpSWQzAj03Am2\",\"workspaceId\":\"68e829f13219230838fedad7\",\"version\":2,\"disableValidation\":false,\"hapticMappings\":[{\"id\":\"68e8c5aa3219230838085c5d\",\"deployId\":\"68e8c5aa3219230838085c5c\",\"enable\":true,\"intensity\":100,\"key\":\"collision_impact\",\"category\":\"Default\",\"description\":\"\",\"updateTime\":1760052617488,\"tactFilePatterns\":[],\"audioFilePatterns\":[{\"patternId\":\"67738c77bf059b6310f87b90\",\"snapshotId\":\"67b572ec49a91a4b93090b5c\",\"position\":\"Vest\",\"clip\":{\"id\":\"\",\"name\":\"Slash
+    Recoil (Both Hand)\",\"version\":2,\"duration\":4,\"patterns\":{\"ForearmL\":[\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"LzkAAAAAAAAAAAAAAAAAAAAAAP8=\",\"RR8AAAAAAAAAAAAAAAAAAAAAAP8=\",\"SxUAAAAAAAAAAAAAAAAAAAAAAP8=\",\"WVcAAAAAAAAAAAAAAAAAAAAAAP8=\"],\"ForearmR\":[\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AEUfAAAAAAAAAAAAAAAAAAAAAP8=\",\"AC85AAAAAAAAAAAAAAAAAAAAAP8=\",\"ACdAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AFdXAAAAAAAAAAAAAAAAAAAAAP8=\"],\"VestFront\":[\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"IwAAIgsAABgAAAAAAAAAAAAAAP8=\",\"JAAQIB0AEB8AAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\"],\"VestBack\":[\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"FQAAGRUAAAAAAAAAAAAAAAAAAP8=\",\"AAAAFBoAAAAAAAAAAAAAAAAAAP8=\",\"Fx0bGgANAA4AAAAAAAAAAAAAAP8=\",\"Fx0bGAAVFBQAAAAAAAAAAAAAAP8=\"]}}}],\"eventTime\":100},{\"id\":\"68e8c5aa3219230838085c5e\",\"deployId\":\"68e8c5aa3219230838085c5c\",\"enable\":true,\"intensity\":100,\"key\":\"engine_vibration\",\"category\":\"Default\",\"description\":\"\",\"updateTime\":1760052875005,\"tactFilePatterns\":[],\"audioFilePatterns\":[{\"patternId\":\"67738c77bf059b6310f87ab0\",\"snapshotId\":\"67ce37fc69fb8c79a6628c87\",\"position\":\"Vest\",\"clip\":{\"id\":\"\",\"name\":\"Vertical
+    Slash (Bottom \u2192 Top)\",\"version\":2,\"duration\":4,\"patterns\":{\"VestFront\":[\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAE4AAERBAAAAAP8=\",\"AAAAAAAAIgAASFYAACIAAAAAAP8=\",\"AAAAAAAkTAAATzIAAAAAAAAAAP8=\",\"AAAdAABZUwAAHwAAAAAAAAAAAP8=\",\"ADpPAABRKwAAAAAAAAAAAAAAAP8=\",\"AC9YAAAAAAAAAAAAAAAAAAAAAP8=\"],\"VestBack\":[\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\"],\"Head\":[\"AAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\"ZGRkZAAAAAAAAAAAAAAAAAAAAAA=\",\"ZGRkZAAAAAAAAAAAAAAAAAAAAAA=\",\"ZGRkZAAAAAAAAAAAAAAAAAAAAAA=\"]}}}],\"eventTime\":180},{\"id\":\"68e8c5aa3219230838085c5f\",\"deployId\":\"68e8c5aa3219230838085c5c\",\"enable\":true,\"intensity\":100,\"key\":\"landing_impact\",\"category\":\"Default\",\"description\":\"\",\"updateTime\":1760052973182,\"tactFilePatterns\":[],\"audioFilePatterns\":[{\"patternId\":\"67738c77bf059b6310f87ab0\",\"snapshotId\":\"67ce37fc69fb8c79a6628c87\",\"position\":\"Vest\",\"clip\":{\"id\":\"\",\"name\":\"Vertical
+    Slash (Bottom \u2192 Top)\",\"version\":2,\"duration\":4,\"patterns\":{\"VestFront\":[\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAE4AAERBAAAAAP8=\",\"AAAAAAAAIgAASFYAACIAAAAAAP8=\",\"AAAAAAAkTAAATzIAAAAAAAAAAP8=\",\"AAAdAABZUwAAHwAAAAAAAAAAAP8=\",\"ADpPAABRKwAAAAAAAAAAAAAAAP8=\",\"AC9YAAAAAAAAAAAAAAAAAAAAAP8=\"],\"VestBack\":[\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\"],\"Head\":[\"AAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\"ZGRkZAAAAAAAAAAAAAAAAAAAAAA=\",\"ZGRkZAAAAAAAAAAAAAAAAAAAAAA=\",\"ZGRkZAAAAAAAAAAAAAAAAAAAAAA=\"]}}}],\"eventTime\":180},{\"id\":\"68e8c5aa3219230838085c60\",\"deployId\":\"68e8c5aa3219230838085c5c\",\"enable\":true,\"intensity\":100,\"key\":\"brake_feedback\",\"category\":\"Default\",\"description\":\"\",\"updateTime\":1760053062399,\"tactFilePatterns\":[],\"audioFilePatterns\":[{\"patternId\":\"67738c77bf059b6310f87b90\",\"snapshotId\":\"67b572ec49a91a4b93090b5c\",\"position\":\"Vest\",\"clip\":{\"id\":\"\",\"name\":\"Slash
+    Recoil (Both Hand)\",\"version\":2,\"duration\":4,\"patterns\":{\"ForearmL\":[\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"LzkAAAAAAAAAAAAAAAAAAAAAAP8=\",\"RR8AAAAAAAAAAAAAAAAAAAAAAP8=\",\"SxUAAAAAAAAAAAAAAAAAAAAAAP8=\",\"WVcAAAAAAAAAAAAAAAAAAAAAAP8=\"],\"ForearmR\":[\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AEUfAAAAAAAAAAAAAAAAAAAAAP8=\",\"AC85AAAAAAAAAAAAAAAAAAAAAP8=\",\"ACdAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AFdXAAAAAAAAAAAAAAAAAAAAAP8=\"],\"VestFront\":[\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"IwAAIgsAABgAAAAAAAAAAAAAAP8=\",\"JAAQIB0AEB8AAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\"],\"VestBack\":[\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"FQAAGRUAAAAAAAAAAAAAAAAAAP8=\",\"AAAAFBoAAAAAAAAAAAAAAAAAAP8=\",\"Fx0bGgANAA4AAAAAAAAAAAAAAP8=\",\"Fx0bGAAVFBQAAAAAAAAAAAAAAP8=\"]}}}],\"eventTime\":100},{\"id\":\"68e8c5aa3219230838085c61\",\"deployId\":\"68e8c5aa3219230838085c5c\",\"enable\":true,\"intensity\":100,\"key\":\"ui_button_click\",\"category\":\"Default\",\"description\":\"\",\"updateTime\":1760053273165,\"tactFilePatterns\":[],\"audioFilePatterns\":[{\"patternId\":\"67738c77bf059b6310f87b48\",\"snapshotId\":\"6777ab0fa274ef4f23020034\",\"position\":\"Vest\",\"clip\":{\"id\":\"\",\"name\":\"Select
+    (Right)\",\"version\":2,\"duration\":4,\"patterns\":{\"GloveL\":[\"AAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAAA=\"],\"GloveR\":[\"AAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\"AA0AAAAAAAAAAAAAAAAAAAAAAAA=\",\"AAMIAAACAAAAAAAAAAAAAAAAAAA=\",\"AAABAwABAAAAAAAAAAAAAAAAAAA=\"],\"ForearmL\":[\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\"],\"ForearmR\":[\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"ADUAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\"],\"VestFront\":[\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAFgAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAFgAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAFgAAAAAAAAAAAAAAAAAAAP8=\"],\"VestBack\":[\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\"]}}}],\"eventTime\":80},{\"id\":\"68e8c5aa3219230838085c62\",\"deployId\":\"68e8c5aa3219230838085c5c\",\"enable\":true,\"intensity\":100,\"key\":\"car_accident\",\"category\":\"Default\",\"description\":\"\",\"updateTime\":1760053525986,\"tactFilePatterns\":[],\"audioFilePatterns\":[{\"patternId\":\"67738c77bf059b6310f87ab7\",\"snapshotId\":\"67b574d049a91a4b93090b84\",\"position\":\"Vest\",\"clip\":{\"id\":\"\",\"name\":\"Vertical
+    Slash (Top \u2192 Bottom)\",\"version\":2,\"duration\":4,\"patterns\":{\"VestFront\":[\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AB9MRgBCRgAAAAAAAAAAAAAAAP8=\",\"AAAeHgBDT0IAAAAAAAAAAAAAAP8=\",\"AAAAAAAAST8ARUsAAAAAAAAAAP8=\",\"AAAAAAAAJgAARV0fAAAVAAAAAP8=\",\"AAAAAAAAAAAAAEwAAERGAAAAAP8=\",\"AAAAAAAAAAAAAAAAAENLAAAAAP8=\"],\"VestBack\":[\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\"],\"Head\":[\"AAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\"ZGRkZAAAAAAAAAAAAAAAAAAAAAA=\",\"ZGRkZAAAAAAAAAAAAAAAAAAAAAA=\"]}}}],\"eventTime\":140},{\"id\":\"68e8c5aa3219230838085c63\",\"deployId\":\"68e8c5aa3219230838085c5c\",\"enable\":true,\"intensity\":100,\"key\":\"jump_liftoff\",\"category\":\"Default\",\"description\":\"\",\"updateTime\":1760053796128,\"tactFilePatterns\":[],\"audioFilePatterns\":[{\"patternId\":\"67738c77bf059b6310f87ab0\",\"snapshotId\":\"67ce37fc69fb8c79a6628c87\",\"position\":\"Vest\",\"clip\":{\"id\":\"\",\"name\":\"Vertical
+    Slash (Bottom \u2192 Top)\",\"version\":2,\"duration\":4,\"patterns\":{\"VestFront\":[\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAE4AAERBAAAAAP8=\",\"AAAAAAAAIgAASFYAACIAAAAAAP8=\",\"AAAAAAAkTAAATzIAAAAAAAAAAP8=\",\"AAAdAABZUwAAHwAAAAAAAAAAAP8=\",\"ADpPAABRKwAAAAAAAAAAAAAAAP8=\",\"AC9YAAAAAAAAAAAAAAAAAAAAAP8=\"],\"VestBack\":[\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAP8=\"],\"Head\":[\"AAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\"AAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\"ZGRkZAAAAAAAAAAAAAAAAAAAAAA=\",\"ZGRkZAAAAAAAAAAAAAAAAAAAAAA=\",\"ZGRkZAAAAAAAAAAAAAAAAAAAAAA=\"]}}}],\"eventTime\":180}],\"categoryOptions\":[\"Default\"],\"description\":\"2\"},\"errorMessage\":null,\"timestamp\":1760085437819,\"code\":200}"
