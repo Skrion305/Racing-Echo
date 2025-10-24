@@ -4,20 +4,17 @@ using LogitechG29.Sample.Input;
 
 public class TactileController : MonoBehaviour
 {
-    //[SerializeField] string appId = "APP_ID";
-    //[SerializeField] string apiKey = "API_KEY";
     [SerializeField] InputControllerReader inputControllerReader;
     Rigidbody carRigidbody;
-    bool wasGrounded = true;
+    //bool wasGrounded = true;
     void Start()
     {
         carRigidbody = GetComponent<Rigidbody>();
-        //BhapticsLibrary.Initialize(appId, apiKey);
     }
     void Update()
     {
         CheckEngineVibration();
-        CheckSuspensionVibration();
+        //CheckSuspensionVibration();
         CheckBrakingFeedback();
     }
     void OnCollisionEnter(Collision collision)
@@ -46,7 +43,7 @@ public class TactileController : MonoBehaviour
             BhapticsLibrary.Play(eventId: "engine_vibration", intensity: engineIntensity * 0.7f, duration: 100, angleX: 0, offsetY: 0);
         }
     }
-    void CheckSuspensionVibration()
+    /*void CheckSuspensionVibration()
     {
         float speed = carRigidbody.linearVelocity.magnitude;
         bool isGrounded = CheckWheelGrounded();
@@ -55,7 +52,7 @@ public class TactileController : MonoBehaviour
             BhapticsLibrary.Play(eventId: "landing_impact", startMillis: 0, intensity: Mathf.Clamp01(speed / 20f), duration: 300, angleX: 0, offsetY: 0);
         }
         wasGrounded = isGrounded;
-    }
+    }*/
     void CheckBrakingFeedback()
     {
         if (inputControllerReader.Brake > 0.8f)
@@ -68,9 +65,9 @@ public class TactileController : MonoBehaviour
         float intensity = Mathf.Clamp01(force / 20f);
         BhapticsLibrary.Play(eventId: "collision_impact", startMillis: 0, intensity: intensity, duration: 400, angleX: 0, offsetY: 0);
     }
-    private bool CheckWheelGrounded()
+    public void PlayUIButtonClick()
     {
-        return true;
+        BhapticsLibrary.Play(eventId: "ui_button_click", startMillis: 0, intensity: 0.6f, duration: 150, angleX: 0, offsetY: 0);
     }
     void OnDestroy()
     {
