@@ -19,10 +19,17 @@ public class TactileController : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        float impactForce = collision.impulse.magnitude / Time.fixedDeltaTime;
-        if (impactForce > 5f)
+        if (collision.gameObject.CompareTag("Car"))
         {
-            PlayCollisionImpact(impactForce);
+            PlayCarAccident();
+        }
+        else if (collision.gameObject.CompareTag("Springboard"))
+        {
+            PlayJumpLaunch();
+        }
+        else
+        {
+            PlayCollisionImpact();
         }
     }
     void CheckEngineVibration()
@@ -40,7 +47,7 @@ public class TactileController : MonoBehaviour
         }
         if (engineIntensity > 0.1f)
         {
-            BhapticsLibrary.Play(eventId: "engine_vibration", intensity: engineIntensity * 0.7f, duration: 100, angleX: 0, offsetY: 0);
+            BhapticsLibrary.Play(eventId: "engine_vibration", startMillis: 0, intensity: engineIntensity * 0.7f, duration: 100, angleX: 0, offsetY: 0);
         }
     }
     /*void CheckSuspensionVibration()
@@ -57,17 +64,24 @@ public class TactileController : MonoBehaviour
     {
         if (inputControllerReader.Brake > 0.8f)
         {
-            BhapticsLibrary.Play(eventId: "brake_feedback", startMillis: 0, intensity: 1f, duration: 200, angleX: 0, offsetY: 0);
+            BhapticsLibrary.Play(eventId: "brake_feedback", startMillis: 0, intensity: 1, duration: 200, angleX: 0, offsetY: 0);
         }
     }
-    void PlayCollisionImpact(float force)
+    void PlayCollisionImpact()
     {
-        float intensity = Mathf.Clamp01(force / 20f);
-        BhapticsLibrary.Play(eventId: "collision_impact", startMillis: 0, intensity: intensity, duration: 400, angleX: 0, offsetY: 0);
+        BhapticsLibrary.Play(eventId: "collision_impact", startMillis: 0, intensity: 1, duration: 400, angleX: 0, offsetY: 0);
     }
     public void PlayUIButtonClick()
     {
         BhapticsLibrary.Play(eventId: "ui_button_click", startMillis: 0, intensity: 0.6f, duration: 150, angleX: 0, offsetY: 0);
+    }
+    void PlayCarAccident()
+    {
+        BhapticsLibrary.Play(eventId: "car_accident", startMillis: 0, intensity: 1, duration: 600, angleX: 0, offsetY: 0);
+    }
+    public void PlayJumpLaunch()
+    {
+        BhapticsLibrary.Play(eventId: "jump_liftoff", startMillis: 100, intensity: 0.7f, duration: 300, angleX: 0, offsetY: 0);
     }
     void OnDestroy()
     {
