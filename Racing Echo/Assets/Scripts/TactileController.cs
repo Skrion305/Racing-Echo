@@ -6,7 +6,7 @@ public class TactileController : MonoBehaviour
 {
     [SerializeField] InputControllerReader inputControllerReader;
     Rigidbody carRigidbody;
-    //bool wasGrounded = true;
+    bool isGrounded = true;
     void Start()
     {
         carRigidbody = GetComponent<Rigidbody>();
@@ -14,7 +14,7 @@ public class TactileController : MonoBehaviour
     void Update()
     {
         CheckEngineVibration();
-        //CheckSuspensionVibration();
+        CheckSuspensionVibration();
         CheckBrakingFeedback();
     }
     void OnCollisionEnter(Collision collision)
@@ -28,9 +28,20 @@ public class TactileController : MonoBehaviour
             PlayCollisionImpact();
         }
     }
-    void OnCollisionExit(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Springboard"))
+        if (other.CompareTag("Road"))
+        {
+            isGrounded = true;
+        }
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Road"))
+        {
+            isGrounded = false;
+        }
+        else if (other.CompareTag("Springboard"))
         {
             PlayJumpLaunch();
         }
@@ -53,16 +64,14 @@ public class TactileController : MonoBehaviour
             BhapticsLibrary.Play(eventId: "engine_vibration", startMillis: 0, intensity: engineIntensity * 0.7f, duration: 100, angleX: 0, offsetY: 0);
         }
     }
-    /*void CheckSuspensionVibration()
+    void CheckSuspensionVibration()
     {
         float speed = carRigidbody.linearVelocity.magnitude;
-        bool isGrounded = CheckWheelGrounded();
-        if (!isGrounded && wasGrounded && (speed > 2f))
+        if (isGrounded && (speed > 3f))
         {
             BhapticsLibrary.Play(eventId: "landing_impact", startMillis: 0, intensity: Mathf.Clamp01(speed / 20f), duration: 300, angleX: 0, offsetY: 0);
         }
-        wasGrounded = isGrounded;
-    }*/
+    }
     void CheckBrakingFeedback()
     {
         if (inputControllerReader.Brake > 0.8f)
@@ -81,7 +90,6 @@ public class TactileController : MonoBehaviour
     void PlayCarAccident()
     {
         BhapticsLibrary.Play(eventId: "car_accident", startMillis: 0, intensity: 1, duration: 600, angleX: 0, offsetY: 0);
-        Debug.Log("1");
     }
     public void PlayJumpLaunch()
     {
