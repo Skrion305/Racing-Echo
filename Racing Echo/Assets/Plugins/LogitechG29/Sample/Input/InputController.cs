@@ -409,6 +409,17 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""c841f113-6064-4276-9826-9394cb19c89f"",
+                    ""path"": ""<Keyboard>/backquote"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Options"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""ffd245f9-9f5b-487f-bcd2-4750691ac8e0"",
                     ""path"": ""<Logitech G29 Racing Wheel>/plusButton"",
                     ""interactions"": """",
