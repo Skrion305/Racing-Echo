@@ -23,13 +23,16 @@ public class TactileController : MonoBehaviour
         {
             PlayCarAccident();
         }
-        else if (collision.gameObject.CompareTag("Springboard"))
-        {
-            PlayJumpLaunch();
-        }
         else
         {
             PlayCollisionImpact();
+        }
+    }
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Springboard"))
+        {
+            PlayJumpLaunch();
         }
     }
     void CheckEngineVibration()
@@ -78,6 +81,7 @@ public class TactileController : MonoBehaviour
     void PlayCarAccident()
     {
         BhapticsLibrary.Play(eventId: "car_accident", startMillis: 0, intensity: 1, duration: 600, angleX: 0, offsetY: 0);
+        Debug.Log("1");
     }
     public void PlayJumpLaunch()
     {
