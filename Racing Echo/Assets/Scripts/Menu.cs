@@ -10,8 +10,8 @@ public class Menu : MonoBehaviour
     }
     public void ExitGame()
     {
-        //Application.Quit();
-        UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
+        //UnityEditor.EditorApplication.isPlaying = false;
     }
     public void PlayUIButtonClick()
     {
