@@ -29,7 +29,6 @@ public class TactileController : MonoBehaviour
             PlayCollisionImpact();
         }
         carTelemetryHandler.TriggerBraking(2);
-        Debug.Log("3");
     }
     void OnTriggerEnter(Collider other)
     {
