@@ -7,6 +7,7 @@ public class TactileController : MonoBehaviour
     [SerializeField] InputControllerReader inputControllerReader;
     Rigidbody carRigidbody;
     bool isGrounded = true;
+    [SerializeField] CarTelemetryHandler carTelemetryHandler;
     void Start()
     {
         carRigidbody = GetComponent<Rigidbody>();
@@ -27,6 +28,8 @@ public class TactileController : MonoBehaviour
         {
             PlayCollisionImpact();
         }
+        carTelemetryHandler.TriggerBraking(2);
+        Debug.Log("3");
     }
     void OnTriggerEnter(Collider other)
     {

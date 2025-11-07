@@ -7992,6 +7992,7 @@ MonoBehaviour:
   inputControllerReader: {fileID: 11400000, guid: 8268bb9eff5a1954492cd4817fb37528, type: 2}
   maxSteeringAngle: 75
   steeringSpeed: 5
+  carTelemetryHandler: {fileID: 1490238687}
 --- !u!1 &977816063 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3220098672711012923, guid: f014434df08c409429dc0bd178b82c5c, type: 3}
@@ -15821,6 +15822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vehicleTransform: {fileID: 543450652218383152}
   rigidbody: {fileID: 1490238686}
+  inputControllerReader: {fileID: 11400000, guid: 8268bb9eff5a1954492cd4817fb37528, type: 2}
 --- !u!65 &1490238688
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15958,7 +15960,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1493074528}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65fdd313944f708459fd687fa0c20ff6, type: 3}
   m_Name: 
@@ -15966,6 +15968,7 @@ MonoBehaviour:
   inputControllerReader: {fileID: 11400000, guid: 8268bb9eff5a1954492cd4817fb37528, type: 2}
   maxSteeringAngle: 75
   steeringSpeed: 5
+  carTelemetryHandler: {fileID: 0}
 --- !u!1 &1493736780
 GameObject:
   m_ObjectHideFlags: 0
@@ -18196,7 +18199,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733135454}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65fdd313944f708459fd687fa0c20ff6, type: 3}
   m_Name: 
@@ -18204,6 +18207,7 @@ MonoBehaviour:
   inputControllerReader: {fileID: 11400000, guid: 8268bb9eff5a1954492cd4817fb37528, type: 2}
   maxSteeringAngle: 75
   steeringSpeed: 5
+  carTelemetryHandler: {fileID: 0}
 --- !u!1 &1747774377
 GameObject:
   m_ObjectHideFlags: 0
@@ -23859,6 +23863,7 @@ GameObject:
   - component: {fileID: 919132148498039181}
   - component: {fileID: 919132148498039182}
   - component: {fileID: 919132148498039183}
+  - component: {fileID: 919132148498039184}
   m_Layer: 0
   m_Name: F12022_bodytest
   m_TagString: Untagged
@@ -23915,6 +23920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputControllerReader: {fileID: 11400000, guid: 8268bb9eff5a1954492cd4817fb37528, type: 2}
+  carTelemetryHandler: {fileID: 1490238687}
 --- !u!114 &919132148498039182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23951,6 +23957,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 0.63109565, z: 1}
   m_Center: {x: -0, y: 0.18445218, z: 0}
+--- !u!114 &919132148498039184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148498039178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990700dde497b0f4083ae7c8cf79eea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carTelemetryHandler: {fileID: 1490238687}
+  inputControllerReader: {fileID: 11400000, guid: 8268bb9eff5a1954492cd4817fb37528, type: 2}
 --- !u!4 &973252633869116250
 Transform:
   m_ObjectHideFlags: 0

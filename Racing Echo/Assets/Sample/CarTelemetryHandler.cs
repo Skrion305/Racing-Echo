@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using _2DOF;
 using UnityEngine;
+using LogitechG29.Sample.Input;
 
 public class CarTelemetryHandler : MonoBehaviour
 {
@@ -12,11 +13,13 @@ public class CarTelemetryHandler : MonoBehaviour
 
     private ObjectTelemetryData _telemetryDataData;
     private SendingData _sendingData;
-
+    Vector3 lastVelocity;
+    [SerializeField] InputControllerReader inputControllerReader;
     private void Awake()
     {
         _sendingData = new SendingData();
         _telemetryDataData = _sendingData.ObjectTelemetryData;
+        lastVelocity = Vector3.zero;
     }
 
     public void OnEnable()
@@ -27,7 +30,7 @@ public class CarTelemetryHandler : MonoBehaviour
 
     public void OnDisable()
     {
-        StopCoroutine(TelemetryHandler());
+        StopAllCoroutines();
         _sendingData.SendingStop();
     }
 
@@ -57,16 +60,43 @@ public class CarTelemetryHandler : MonoBehaviour
 
     private void UpdateAngles()
     {
-        var euler = vehicleTransform.eulerAngles;
-
-        euler.x = Mathf.Approximately(euler.x, 180) ? 0 : euler.x;
-        euler.z = Mathf.Approximately(euler.z, 180) ? 0 : euler.z;
-        euler.y = Mathf.Approximately(euler.y, 180) ? 0 : euler.y;
-
-        euler.x = euler.x > 180 ? euler.x - 360 : euler.x;
-        euler.z = euler.z > 180 ? euler.z - 360 : euler.z;
-        euler.y = euler.y > 180 ? euler.y - 360 : euler.y;
-
-        _telemetryDataData.Angles = euler;
+        Vector3 currentVelocity = rigidbody.linearVelocity;
+        Vector3 acceleration = (currentVelocity - lastVelocity) / Time.deltaTime;
+        Vector3 angles = new Vector3(Mathf.Clamp(acceleration.z, -15f, 15f), 0f, Mathf.Clamp(-inputControllerReader.Steering * 2f, -15f, 15f));
+        _telemetryDataData.Angles = angles;
+        lastVelocity = currentVelocity;
+    }
+    public void TriggerSharpTurn(float intensity)
+    {
+        StartCoroutine(SharpTurn(intensity));
+    }
+    public void TriggerAcceleration(float intensity)
+    {
+        StartCoroutine(Acceleration(intensity));
+    }
+    public void TriggerBraking(float intensity)
+    {
+        StartCoroutine(Braking(intensity));
+    }
+    IEnumerator SharpTurn(float intensity)
+    {
+        Vector3 originalAngles = _telemetryDataData.Angles;
+        _telemetryDataData.Angles = new Vector3(originalAngles.x, 0, Mathf.Clamp(intensity * 10f, -15f, 15f));
+        yield return new WaitForSeconds(0.5f);
+        _telemetryDataData.Angles = originalAngles;
+    }
+    IEnumerator Acceleration(float intensity)
+    {
+        Vector3 originalAngles = _telemetryDataData.Angles;
+        _telemetryDataData.Angles = new Vector3(Mathf.Clamp(intensity * 8f, -15f, 15f), 0, originalAngles.z);
+        yield return new WaitForSeconds(0.3f);
+        _telemetryDataData.Angles = originalAngles;
+    }
+    private IEnumerator Braking(float intensity)
+    {
+        Vector3 originalAngles = _telemetryDataData.Angles;
+        _telemetryDataData.Angles = new Vector3(Mathf.Clamp(-intensity * 8f, -15f, 15f), 0, originalAngles.z);
+        yield return new WaitForSeconds(0.3f);
+        _telemetryDataData.Angles = originalAngles;
     }
 }
