@@ -24,6 +24,7 @@ public class Pause : MonoBehaviour
     }
     public void Menu()
     {
-        SceneManager.LoadScene("Menu");
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
     }
 }
