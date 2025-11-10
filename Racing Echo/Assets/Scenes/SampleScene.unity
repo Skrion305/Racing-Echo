@@ -12942,7 +12942,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13947,12 +13947,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1301473644}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 7.593, y: 0.048, z: -31.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652218383152}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1301473646
 MonoBehaviour:
@@ -23149,7 +23149,6 @@ Transform:
   - {fileID: 1764056761}
   - {fileID: 437510909}
   - {fileID: 1446808921}
-  - {fileID: 1301473645}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &595970123422331988
@@ -23639,6 +23638,7 @@ MonoBehaviour:
   inputControllerReader: {fileID: 11400000, guid: 8268bb9eff5a1954492cd4817fb37528, type: 2}
   pause: {fileID: 1446808920}
   audioSource: {fileID: 525202202}
+  mainCamera: {fileID: 947264609}
 --- !u!65 &919132148498039183
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27884,6 +27884,7 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 543450652218383152}
+  - {fileID: 1301473645}
   - {fileID: 1036531454}
   - {fileID: 1241503699}
   - {fileID: 1593036995}
