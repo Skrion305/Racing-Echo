@@ -4856,7 +4856,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 5
   m_Convex: 0
-  m_CookingOptions: 2
+  m_CookingOptions: 4
   m_Mesh: {fileID: 7402092318883586794, guid: f014434df08c409429dc0bd178b82c5c, type: 3}
 --- !u!1 &658613321 stripped
 GameObject:
@@ -5904,7 +5904,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 5
   m_Convex: 0
-  m_CookingOptions: 2
+  m_CookingOptions: 4
   m_Mesh: {fileID: -694900200057400778, guid: f014434df08c409429dc0bd178b82c5c, type: 3}
 --- !u!1 &832575517
 GameObject:
@@ -8451,7 +8451,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 5
   m_Convex: 0
-  m_CookingOptions: 2
+  m_CookingOptions: 4
   m_Mesh: {fileID: -5207415987835351637, guid: f014434df08c409429dc0bd178b82c5c, type: 3}
 --- !u!1 &1017680423 stripped
 GameObject:
@@ -11538,7 +11538,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 5
   m_Convex: 0
-  m_CookingOptions: 2
+  m_CookingOptions: 4
   m_Mesh: {fileID: -2714948255035003544, guid: f014434df08c409429dc0bd178b82c5c, type: 3}
 --- !u!1 &1041143412 stripped
 GameObject:
@@ -11565,7 +11565,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 5
   m_Convex: 0
-  m_CookingOptions: 2
+  m_CookingOptions: 4
   m_Mesh: {fileID: 7474478720977996851, guid: f014434df08c409429dc0bd178b82c5c, type: 3}
 --- !u!1 &1046768597 stripped
 GameObject:
@@ -12886,7 +12886,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 5
   m_Convex: 0
-  m_CookingOptions: 2
+  m_CookingOptions: 4
   m_Mesh: {fileID: -2518938991727352407, guid: f014434df08c409429dc0bd178b82c5c, type: 3}
 --- !u!1001 &1191457850
 PrefabInstance:
@@ -17579,7 +17579,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 5
   m_Convex: 0
-  m_CookingOptions: 2
+  m_CookingOptions: 4
   m_Mesh: {fileID: -7682789895075569993, guid: f014434df08c409429dc0bd178b82c5c, type: 3}
 --- !u!1 &1709774121
 GameObject:
@@ -23638,7 +23638,6 @@ MonoBehaviour:
   inputControllerReader: {fileID: 11400000, guid: 8268bb9eff5a1954492cd4817fb37528, type: 2}
   pause: {fileID: 1446808920}
   audioSource: {fileID: 525202202}
-  mainCamera: {fileID: 947264609}
 --- !u!65 &919132148498039183
 BoxCollider:
   m_ObjectHideFlags: 0
