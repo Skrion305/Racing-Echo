@@ -18,6 +18,9 @@ public class AI : MonoBehaviour
     float currentMotorTorque;
     float timer = 0f;
     bool obstacle = false;
+    Vector3 lookAheadPos;
+    Vector3 lookAheadDir;
+    float dist;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -54,18 +57,32 @@ public class AI : MonoBehaviour
             steer = Mathf.Clamp(angle / 30f, -1f, 1f);
             frontLeftWheel.steerAngle = 30 * steer;
             frontRightWheel.steerAngle = 30 * steer;
-            currentMotorTorque = 1300f;
+            currentMotorTorque = 2000f;
             brakeForce = 0f;
+            if (currentPoint + 1 < waypoints.Length)
+            {
+                lookAheadPos = waypoints[currentPoint + 1].position;
+                lookAheadDir = (lookAheadPos - target.position).normalized;
+                float lookAheadAngle = Vector3.Angle(direction, lookAheadDir);
+                if (lookAheadAngle > 20f)
+                {
+                    dist = Vector3.Distance(transform.position, target.position);
+                    if (dist < 10f)
+                    {
+                        currentMotorTorque *= 0.5f;
+                    }
+                }
+            }
             if (Mathf.Abs(steer) > 0.3f)
             {
-                currentMotorTorque = Mathf.Lerp(1300f, 500f, Mathf.Abs(steer));
+                currentMotorTorque = Mathf.Lerp(2000f, 500f, Mathf.Abs(steer));
                 if (Mathf.Abs(steer) == 1f)
                 {
                     brakeForce = 0;
                 }
                 else if (Mathf.Abs(steer) > 0.7f)
                 {
-                    brakeForce = 700f * Mathf.Abs(steer);
+                    brakeForce = 1000f * Mathf.Abs(steer);
                 }
             }
             frontLeftWheel.brakeTorque = brakeForce;
@@ -83,6 +100,15 @@ public class AI : MonoBehaviour
     {
         if (other.CompareTag("Checkpoint"))
         {
+            if (currentPoint + 1 >= waypoints.Length)
+            {
+                waypoints[0].gameObject.SetActive(true);
+            }
+            else
+            {
+                waypoints[currentPoint + 1].gameObject.SetActive(true);
+            }
+            waypoints[currentPoint].gameObject.SetActive(false);
             currentPoint++;
             if (currentPoint >= waypoints.Length)
             {
