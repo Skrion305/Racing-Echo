@@ -11,8 +11,8 @@ public class AI : MonoBehaviour
     Vector3 direction;
     float angle;
     float steer;
-    int currentPoint = 0;
-    int currentLap = 1;
+    [SerializeField] int currentPoint = 0;
+    [SerializeField] int currentLap = 1;
     Rigidbody rb;
     float brakeForce;
     float currentMotorTorque;
@@ -93,39 +93,29 @@ public class AI : MonoBehaviour
             frontRightWheel.motorTorque = -currentMotorTorque;
             rearLeftWheel.motorTorque = -currentMotorTorque;
             rearRightWheel.motorTorque = -currentMotorTorque;
-            Debug.Log($"Точка: {currentPoint}, Поворот: {steer}, Тормоз: {brakeForce}, Скорость: {currentMotorTorque}");
         }
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Checkpoint"))
+        if (((other.CompareTag("Checkpoint")) || (other.CompareTag("Finish"))) && (other.gameObject == waypoints[currentPoint].gameObject))
         {
-            if (currentPoint + 1 >= waypoints.Length)
-            {
-                waypoints[0].gameObject.SetActive(true);
-            }
-            else
-            {
-                waypoints[currentPoint + 1].gameObject.SetActive(true);
-            }
-            waypoints[currentPoint].gameObject.SetActive(false);
             currentPoint++;
             if (currentPoint >= waypoints.Length)
             {
                 currentPoint = 0;
                 currentLap++;
-                if (currentLap > 3)
-                {
-                    frontLeftWheel.motorTorque = 0;
-                    frontRightWheel.motorTorque = 0;
-                    rearLeftWheel.motorTorque = 0;
-                    rearRightWheel.motorTorque = 0;
-                    frontLeftWheel.brakeTorque = 5000f;
-                    frontRightWheel.brakeTorque = 5000f;
-                    rearLeftWheel.brakeTorque = 5000f;
-                    rearRightWheel.brakeTorque = 5000f;
-                    enabled = false;
-                }
+            }
+            if ((other.CompareTag("Finish")) && (currentLap > 3))
+            {
+                frontLeftWheel.motorTorque = 0;
+                frontRightWheel.motorTorque = 0;
+                rearLeftWheel.motorTorque = 0;
+                rearRightWheel.motorTorque = 0;
+                frontLeftWheel.brakeTorque = 5000f;
+                frontRightWheel.brakeTorque = 5000f;
+                rearLeftWheel.brakeTorque = 5000f;
+                rearRightWheel.brakeTorque = 5000f;
+                enabled = false;
             }
         }
     }
