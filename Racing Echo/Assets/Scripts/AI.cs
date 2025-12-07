@@ -121,8 +121,9 @@ public class AI : MonoBehaviour
     }
     void OnCollisionEnter()
     {
-        if (rb.linearVelocity.magnitude < 10f)
+        if ((rb.linearVelocity.magnitude < 10f) || (currentMotorTorque < 700f))
         {
+            timer = 0f;
             obstacle = true;
         }
     }
