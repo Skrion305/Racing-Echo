@@ -12,7 +12,7 @@ public class AI : MonoBehaviour
     float angle;
     float steer;
     [SerializeField] int currentPoint = 0;
-    [SerializeField] int currentLap = 1;
+    public int currentLap = 1;
     Rigidbody rb;
     float brakeForce;
     float currentMotorTorque;
@@ -21,6 +21,7 @@ public class AI : MonoBehaviour
     Vector3 lookAheadPos;
     Vector3 lookAheadDir;
     float dist;
+    public int racingPosition;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
