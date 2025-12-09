@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class AI : MonoBehaviour
 {
-    [SerializeField] Transform[] waypoints;
+    [SerializeField] GameObject firstTrackCheckpoints;
+    [SerializeField] GameObject secondTrackCheckpoints;
+    [SerializeField] GameObject thirdTrackCheckpoints;
+    [SerializeField] Transform[] checkpoints1;
+    [SerializeField] Transform[] checkpoints2;
+    [SerializeField] Transform[] checkpoints3;
+    Transform[] waypoints;
     public WheelCollider frontLeftWheel;
     public WheelCollider frontRightWheel;
     public WheelCollider rearLeftWheel;
@@ -25,6 +31,24 @@ public class AI : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        if (Settings.raceTrack == 1)
+        {
+            waypoints = checkpoints1;
+            Destroy(secondTrackCheckpoints);
+            Destroy(thirdTrackCheckpoints);
+        }
+        if (Settings.raceTrack == 2)
+        {
+            waypoints = checkpoints2;
+            Destroy(firstTrackCheckpoints);
+            Destroy(thirdTrackCheckpoints);
+        }
+        if (Settings.raceTrack == 3)
+        {
+            waypoints = checkpoints3;
+            Destroy(firstTrackCheckpoints);
+            Destroy(secondTrackCheckpoints);
+        }
     }
     void FixedUpdate()
     {

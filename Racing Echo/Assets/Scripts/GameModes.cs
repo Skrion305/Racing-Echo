@@ -11,6 +11,8 @@ public class GameModes : MonoBehaviour
     public float timer = 0f;
     public int laps = 0;
     public int racingPosition;
+    [SerializeField] GameObject finish;
+    [SerializeField] GameObject[] checkpoints;
     void Start()
     {
         if (Settings.gameMode == "Гонка")
@@ -30,7 +32,12 @@ public class GameModes : MonoBehaviour
             {
                 Destroy(cars[i]);
             }
+            for (int i = 0; i < checkpoints.Length; i++)
+            {
+                Destroy(checkpoints[i]);
+            }
             Destroy(timerPanel);
+            Destroy(finish);
         }
     }
     void Update()
