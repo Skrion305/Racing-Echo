@@ -6,7 +6,7 @@ public class TactileController : MonoBehaviour
 {
     [SerializeField] InputControllerReader inputControllerReader;
     Rigidbody carRigidbody;
-    bool isGrounded = true;
+    //bool isGrounded = true;
     [SerializeField] CarTelemetryHandler carTelemetryHandler;
     void Start()
     {
