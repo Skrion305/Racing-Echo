@@ -33,15 +33,15 @@ public class Results : MonoBehaviour
                 other.GetComponent<AI>().racingPosition = racingPosition;
                 racingPosition++;
             }
-            if ((other.CompareTag("Player")) && (player.laps > 3))
+            if ((other.CompareTag("Player")) && (player.laps > 2))
             {
                 other.GetComponent<GameModes>().racingPosition = racingPosition;
                 end = true;
             }
         }
-        if ((Settings.gameMode == "На время") && (other.CompareTag("Player")) && (player.laps > 3))
+        if ((Settings.gameMode == "На время") && (other.CompareTag("Player")) && (player.laps > 2))
         {
-            if (player.timer > Settings.record)
+            if (player.timer < Settings.record)
             {
                 Settings.record = player.timer;
             }
