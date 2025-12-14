@@ -12,7 +12,14 @@ public class GameModes : MonoBehaviour
     public int laps = 0;
     public int racingPosition;
     [SerializeField] GameObject finish;
-    [SerializeField] GameObject[] checkpoints;
+    [SerializeField] GameObject firstTrackCheckpoints;
+    [SerializeField] GameObject secondTrackCheckpoints;
+    [SerializeField] GameObject thirdTrackCheckpoints;
+    Transform[] waypoints;
+    [SerializeField] Transform[] checkpoints1;
+    [SerializeField] Transform[] checkpoints2;
+    [SerializeField] Transform[] checkpoints3;
+    int currentPoint = 0;
     void Start()
     {
         if (Settings.gameMode == "Гонка")
@@ -32,12 +39,32 @@ public class GameModes : MonoBehaviour
             {
                 Destroy(cars[i]);
             }
-            for (int i = 0; i < checkpoints.Length; i++)
-            {
-                Destroy(checkpoints[i]);
-            }
+            Destroy(firstTrackCheckpoints);
+            Destroy(secondTrackCheckpoints);
+            Destroy(thirdTrackCheckpoints);
             Destroy(timerPanel);
             Destroy(finish);
+        }
+        if (Settings.gameMode != "Свободный заезд")
+        {
+            if (Settings.raceTrack == 1)
+            {
+                waypoints = checkpoints1;
+                Destroy(secondTrackCheckpoints);
+                Destroy(thirdTrackCheckpoints);
+            }
+            if (Settings.raceTrack == 2)
+            {
+                waypoints = checkpoints2;
+                Destroy(firstTrackCheckpoints);
+                Destroy(thirdTrackCheckpoints);
+            }
+            if (Settings.raceTrack == 3)
+            {
+                waypoints = checkpoints3;
+                Destroy(firstTrackCheckpoints);
+                Destroy(secondTrackCheckpoints);
+            }
         }
     }
     void Update()
@@ -52,9 +79,14 @@ public class GameModes : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Finish"))
+        if (((other.CompareTag("Checkpoint")) || (other.CompareTag("Finish"))) && (other.gameObject == waypoints[currentPoint].gameObject))
         {
-            laps++;
+            currentPoint++;
+            if (currentPoint >= waypoints.Length)
+            {
+                currentPoint = 0;
+                laps++;
+            }
         }
     }
 }

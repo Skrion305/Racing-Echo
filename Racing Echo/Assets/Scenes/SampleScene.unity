@@ -15050,9 +15050,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68cfb7cb4628f5847b60f4ea92c903c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstTrackCheckpoints: {fileID: 1280833939}
-  secondTrackCheckpoints: {fileID: 1959884276}
-  thirdTrackCheckpoints: {fileID: 872865153}
   checkpoints1:
   - {fileID: 1264375955}
   - {fileID: 1526094127}
@@ -15142,7 +15139,6 @@ MonoBehaviour:
   frontRightWheel: {fileID: 2065356092}
   rearLeftWheel: {fileID: 758735460}
   rearRightWheel: {fileID: 914220201}
-  currentPoint: 0
   currentLap: 1
   racingPosition: 0
 --- !u!65 &827842377
@@ -18550,9 +18546,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68cfb7cb4628f5847b60f4ea92c903c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstTrackCheckpoints: {fileID: 1280833939}
-  secondTrackCheckpoints: {fileID: 1959884276}
-  thirdTrackCheckpoints: {fileID: 872865153}
   checkpoints1:
   - {fileID: 1264375955}
   - {fileID: 1526094127}
@@ -18642,7 +18635,6 @@ MonoBehaviour:
   frontRightWheel: {fileID: 289130574}
   rearLeftWheel: {fileID: 1893150302}
   rearRightWheel: {fileID: 1709812866}
-  currentPoint: 0
   currentLap: 1
   racingPosition: 0
 --- !u!1 &943857733
@@ -18870,9 +18862,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68cfb7cb4628f5847b60f4ea92c903c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstTrackCheckpoints: {fileID: 1280833939}
-  secondTrackCheckpoints: {fileID: 1959884276}
-  thirdTrackCheckpoints: {fileID: 872865153}
   checkpoints1:
   - {fileID: 1264375955}
   - {fileID: 1526094127}
@@ -18962,7 +18951,6 @@ MonoBehaviour:
   frontRightWheel: {fileID: 796127718}
   rearLeftWheel: {fileID: 1785763780}
   rearRightWheel: {fileID: 1744600934}
-  currentPoint: 0
   currentLap: 1
   racingPosition: 0
 --- !u!65 &956245981
@@ -29572,9 +29560,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68cfb7cb4628f5847b60f4ea92c903c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstTrackCheckpoints: {fileID: 1280833939}
-  secondTrackCheckpoints: {fileID: 1959884276}
-  thirdTrackCheckpoints: {fileID: 872865153}
   checkpoints1:
   - {fileID: 1264375955}
   - {fileID: 1526094127}
@@ -29664,7 +29649,6 @@ MonoBehaviour:
   frontRightWheel: {fileID: 225637947}
   rearLeftWheel: {fileID: 836002468}
   rearRightWheel: {fileID: 131439783}
-  currentPoint: 0
   currentLap: 1
   racingPosition: 0
 --- !u!65 &1395163224
@@ -33158,9 +33142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68cfb7cb4628f5847b60f4ea92c903c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstTrackCheckpoints: {fileID: 1280833939}
-  secondTrackCheckpoints: {fileID: 1959884276}
-  thirdTrackCheckpoints: {fileID: 872865153}
   checkpoints1:
   - {fileID: 1264375955}
   - {fileID: 1526094127}
@@ -33250,7 +33231,6 @@ MonoBehaviour:
   frontRightWheel: {fileID: 1192004265}
   rearLeftWheel: {fileID: 1599452316}
   rearRightWheel: {fileID: 1399215455}
-  currentPoint: 0
   currentLap: 1
   racingPosition: 0
 --- !u!65 &1550105903
@@ -52516,7 +52496,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148498039178}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b59aa36201ddc5f4192d4f5685ea331f, type: 3}
   m_Name: 
@@ -52578,10 +52558,96 @@ MonoBehaviour:
   laps: 0
   racingPosition: 0
   finish: {fileID: 1264375954}
-  checkpoints:
-  - {fileID: 1280833939}
-  - {fileID: 1959884276}
-  - {fileID: 872865153}
+  firstTrackCheckpoints: {fileID: 1280833939}
+  secondTrackCheckpoints: {fileID: 1959884276}
+  thirdTrackCheckpoints: {fileID: 872865153}
+  waypoints: []
+  checkpoints1:
+  - {fileID: 1264375955}
+  - {fileID: 1526094127}
+  - {fileID: 1807066454}
+  - {fileID: 1059469195}
+  - {fileID: 275963690}
+  - {fileID: 1190065039}
+  - {fileID: 1947474538}
+  - {fileID: 485908909}
+  - {fileID: 3853845}
+  - {fileID: 20344795}
+  - {fileID: 836450858}
+  - {fileID: 1865318337}
+  - {fileID: 2104462405}
+  - {fileID: 1294974535}
+  - {fileID: 2054462448}
+  - {fileID: 1857003399}
+  - {fileID: 1227828205}
+  - {fileID: 1562205746}
+  - {fileID: 1358468859}
+  - {fileID: 171291222}
+  checkpoints2:
+  - {fileID: 1264375955}
+  - {fileID: 1306053667}
+  - {fileID: 360951704}
+  - {fileID: 203269082}
+  - {fileID: 1467625221}
+  - {fileID: 2119490280}
+  - {fileID: 873837128}
+  - {fileID: 485030537}
+  - {fileID: 1676238293}
+  - {fileID: 1625640408}
+  - {fileID: 329743949}
+  - {fileID: 58746985}
+  - {fileID: 1849945059}
+  - {fileID: 1018732552}
+  - {fileID: 1591409752}
+  - {fileID: 70070371}
+  - {fileID: 1480674568}
+  - {fileID: 859453277}
+  - {fileID: 1172564434}
+  - {fileID: 1959071420}
+  - {fileID: 1492544721}
+  - {fileID: 1600469321}
+  - {fileID: 769887901}
+  - {fileID: 1944841860}
+  - {fileID: 239155903}
+  - {fileID: 2067867327}
+  - {fileID: 2106882123}
+  - {fileID: 1552169592}
+  - {fileID: 2109802143}
+  - {fileID: 793064149}
+  - {fileID: 456605894}
+  - {fileID: 1188886295}
+  - {fileID: 271077318}
+  - {fileID: 1979197393}
+  - {fileID: 691966226}
+  - {fileID: 1902442719}
+  - {fileID: 837458938}
+  checkpoints3:
+  - {fileID: 1264375955}
+  - {fileID: 1076417404}
+  - {fileID: 1507486123}
+  - {fileID: 1528811774}
+  - {fileID: 2105418157}
+  - {fileID: 1807633057}
+  - {fileID: 1840115026}
+  - {fileID: 1322062168}
+  - {fileID: 353401052}
+  - {fileID: 1907287932}
+  - {fileID: 615579242}
+  - {fileID: 1009575252}
+  - {fileID: 1166289871}
+  - {fileID: 1073567427}
+  - {fileID: 822423608}
+  - {fileID: 460081083}
+  - {fileID: 592132379}
+  - {fileID: 234884804}
+  - {fileID: 1715052360}
+  - {fileID: 749901245}
+  - {fileID: 153389146}
+  - {fileID: 1634808848}
+  - {fileID: 1700431678}
+  - {fileID: 2069930589}
+  - {fileID: 624341167}
+  currentPoint: 0
 --- !u!114 &919132148498039186
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class AI : MonoBehaviour
 {
-    [SerializeField] GameObject firstTrackCheckpoints;
-    [SerializeField] GameObject secondTrackCheckpoints;
-    [SerializeField] GameObject thirdTrackCheckpoints;
     [SerializeField] Transform[] checkpoints1;
     [SerializeField] Transform[] checkpoints2;
     [SerializeField] Transform[] checkpoints3;
@@ -17,7 +14,7 @@ public class AI : MonoBehaviour
     Vector3 direction;
     float angle;
     float steer;
-    [SerializeField] int currentPoint = 0;
+    int currentPoint = 0;
     public int currentLap = 1;
     Rigidbody rb;
     float brakeForce;
@@ -34,20 +31,14 @@ public class AI : MonoBehaviour
         if (Settings.raceTrack == 1)
         {
             waypoints = checkpoints1;
-            Destroy(secondTrackCheckpoints);
-            Destroy(thirdTrackCheckpoints);
         }
         if (Settings.raceTrack == 2)
         {
             waypoints = checkpoints2;
-            Destroy(firstTrackCheckpoints);
-            Destroy(thirdTrackCheckpoints);
         }
         if (Settings.raceTrack == 3)
         {
             waypoints = checkpoints3;
-            Destroy(firstTrackCheckpoints);
-            Destroy(secondTrackCheckpoints);
         }
     }
     void FixedUpdate()
