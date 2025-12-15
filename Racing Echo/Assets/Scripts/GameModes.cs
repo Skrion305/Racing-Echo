@@ -20,10 +20,22 @@ public class GameModes : MonoBehaviour
     [SerializeField] Transform[] checkpoints2;
     [SerializeField] Transform[] checkpoints3;
     int currentPoint = 0;
+    float raceTimer = 6f;
+    int rt;
+    [SerializeField] GameObject raceTimerPanel;
+    [SerializeField] TMP_Text raceTimerText;
+    float deleteTimer = 0f;
+    bool start = false;
+    [SerializeField] GameObject[] trafficLight;
     void Start()
     {
         if (Settings.gameMode == "Гонка")
         {
+            GetComponent<CarControllerSample>().enabled = false;
+            for (int i = 0; i < cars.Length; i++)
+            {
+                cars[i].GetComponent<AI>().enabled = false;
+            }
             Destroy(timerPanel);
         }
         if (Settings.gameMode == "На время")
@@ -32,6 +44,7 @@ public class GameModes : MonoBehaviour
             {
                 Destroy(cars[i]);
             }
+            Destroy(raceTimerPanel);
         }
         if (Settings.gameMode == "Свободный заезд")
         {
@@ -43,6 +56,7 @@ public class GameModes : MonoBehaviour
             Destroy(secondTrackCheckpoints);
             Destroy(thirdTrackCheckpoints);
             Destroy(timerPanel);
+            Destroy(raceTimerPanel);
             Destroy(finish);
         }
         if (Settings.gameMode != "Свободный заезд")
@@ -69,6 +83,34 @@ public class GameModes : MonoBehaviour
     }
     void Update()
     {
+        if ((Settings.gameMode == "Гонка") && (!start))
+        {
+            if (raceTimer >= 1)
+            {
+                raceTimer -= Time.deltaTime;
+                rt = (int) raceTimer;
+                raceTimerText.text = rt.ToString();
+            }
+            else
+            {
+                for (int i = 0; i < trafficLight.Length; i++)
+                {
+                    trafficLight[i].GetComponent<MeshRenderer>().material.color = Color.green;
+                }
+                raceTimerText.text = "Старт!";
+                GetComponent<CarControllerSample>().enabled = true;
+                for (int i = 0; i < cars.Length; i++)
+                {
+                    cars[i].GetComponent<AI>().enabled = true;
+                }
+                deleteTimer += Time.deltaTime;
+                if (deleteTimer >= 3)
+                {
+                    Destroy(raceTimerPanel);
+                    start = true;
+                }
+            }
+        }
         if (Settings.gameMode == "На время")
         {
             timer += Time.deltaTime;
