@@ -47,6 +47,10 @@ public class Results : MonoBehaviour
             if ((other.CompareTag("Player")) && (player.laps > 2))
             {
                 other.GetComponent<GameModes>().racingPosition = racingPosition;
+                if ((!Settings.achievement1) && (other.GetComponent<GameModes>().racingPosition == 1))
+                {
+                    Settings.achievement1 = true;
+                }
                 racingPosition++;
                 lastCars.Sort((car1, car2) =>
                 {
@@ -147,6 +151,10 @@ public class Results : MonoBehaviour
             if (player.timer < Settings.record)
             {
                 Settings.record = player.timer;
+            }
+            if ((!Settings.achievement2) && (Settings.record <= 3f))
+            {
+                Settings.achievement2 = true;
             }
             recordMinutes = (int) Settings.record / 60;
             recordSeconds = (int) Settings.record % 60;
