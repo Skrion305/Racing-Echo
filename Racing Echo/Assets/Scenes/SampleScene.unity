@@ -2532,7 +2532,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &118918075
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5646,7 +5646,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 11.67}
+  m_AnchoredPosition: {x: 0, y: 5.8}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &295508602
@@ -5669,8 +5669,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442: 00:00\n\u0420\u0435\u043A\u043E\u0440\u0434:
-    00:00"
+  m_text: '1   Player
+
+    2   Blue
+
+    3   Red
+
+    4   Green
+
+    5   Yellow
+
+    6  
+    White'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5697,8 +5707,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 5
-  m_fontSizeBase: 5
+  m_fontSize: 4
+  m_fontSizeBase: 4
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -15037,7 +15047,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &827842376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15139,8 +15149,9 @@ MonoBehaviour:
   frontRightWheel: {fileID: 2065356092}
   rearLeftWheel: {fileID: 758735460}
   rearRightWheel: {fileID: 914220201}
+  currentPoint: 0
   currentLap: 1
-  racingPosition: 0
+  racingPosition: 3
 --- !u!65 &827842377
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18635,8 +18646,9 @@ MonoBehaviour:
   frontRightWheel: {fileID: 289130574}
   rearLeftWheel: {fileID: 1893150302}
   rearRightWheel: {fileID: 1709812866}
+  currentPoint: 0
   currentLap: 1
-  racingPosition: 0
+  racingPosition: 2
 --- !u!1 &943857733
 GameObject:
   m_ObjectHideFlags: 0
@@ -18849,7 +18861,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &956245980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18951,8 +18963,9 @@ MonoBehaviour:
   frontRightWheel: {fileID: 796127718}
   rearLeftWheel: {fileID: 1785763780}
   rearRightWheel: {fileID: 1744600934}
+  currentPoint: 0
   currentLap: 1
-  racingPosition: 0
+  racingPosition: 6
 --- !u!65 &956245981
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26830,6 +26843,19 @@ MonoBehaviour:
   completing: {fileID: 595914940}
   timerPanel: {fileID: 118918074}
   result: {fileID: 295508602}
+  cars:
+  - {fileID: 919132148498039178}
+  - {fileID: 938918309}
+  - {fileID: 827842375}
+  - {fileID: 1550105901}
+  - {fileID: 1395163222}
+  - {fileID: 956245979}
+  lastCars:
+  - {fileID: 938918309}
+  - {fileID: 827842375}
+  - {fileID: 1550105901}
+  - {fileID: 1395163222}
+  - {fileID: 956245979}
 --- !u!1 &1268055594
 GameObject:
   m_ObjectHideFlags: 0
@@ -29547,7 +29573,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1395163223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29649,8 +29675,9 @@ MonoBehaviour:
   frontRightWheel: {fileID: 225637947}
   rearLeftWheel: {fileID: 836002468}
   rearRightWheel: {fileID: 131439783}
+  currentPoint: 0
   currentLap: 1
-  racingPosition: 0
+  racingPosition: 5
 --- !u!65 &1395163224
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33130,7 +33157,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1550105902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33232,8 +33259,9 @@ MonoBehaviour:
   frontRightWheel: {fileID: 1192004265}
   rearLeftWheel: {fileID: 1599452316}
   rearRightWheel: {fileID: 1399215455}
+  currentPoint: 0
   currentLap: 1
-  racingPosition: 0
+  racingPosition: 4
 --- !u!65 &1550105903
 BoxCollider:
   m_ObjectHideFlags: 0

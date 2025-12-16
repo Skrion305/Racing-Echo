@@ -14,7 +14,7 @@ public class AI : MonoBehaviour
     Vector3 direction;
     float angle;
     float steer;
-    int currentPoint = 0;
+    public int currentPoint = 0;
     public int currentLap = 1;
     Rigidbody rb;
     float brakeForce;
