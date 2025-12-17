@@ -152,7 +152,7 @@ public class Results : MonoBehaviour
             {
                 GameData.record = player.timer;
             }
-            if ((!GameData.achievement2) && (GameData.record <= 3f))
+            if ((!GameData.achievement2) && (GameData.record <= 180f))
             {
                 GameData.achievement2 = true;
             }

@@ -18,6 +18,7 @@ public class CarSound : MonoBehaviour
     void Start()
     {
         carRigidbody = GetComponent<Rigidbody>();
+        AudioListener.volume = GameData.volume;
         engineAudioSource.Play();
     }
     void Update()

@@ -52759,6 +52759,9 @@ MonoBehaviour:
   inputControllerReader: {fileID: 11400000, guid: 8268bb9eff5a1954492cd4817fb37528, type: 2}
   pause: {fileID: 2091671072}
   audioSource: {fileID: 525202202}
+  race: {fileID: 919132148498039185}
+  raceTimer: {fileID: 1550351763}
+  timer: {fileID: 118918074}
 --- !u!114 &919132148498039184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52889,6 +52892,7 @@ MonoBehaviour:
   - {fileID: 624341167}
   raceTimerPanel: {fileID: 1550351763}
   raceTimerText: {fileID: 1933799720}
+  start: 0
   trafficLight:
   - {fileID: 3253811890099907682}
   - {fileID: 8852905309042416674}

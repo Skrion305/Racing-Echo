@@ -25,7 +25,7 @@ public class GameModes : MonoBehaviour
     [SerializeField] GameObject raceTimerPanel;
     [SerializeField] TMP_Text raceTimerText;
     float deleteTimer = 0f;
-    bool start = false;
+    public bool start = false;
     [SerializeField] GameObject[] trafficLight;
     void Start()
     {
