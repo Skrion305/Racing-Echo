@@ -29,7 +29,7 @@ public class GameModes : MonoBehaviour
     [SerializeField] GameObject[] trafficLight;
     void Start()
     {
-        if (Settings.gameMode == "Гонка")
+        if (GameData.gameMode == "Гонка")
         {
             GetComponent<CarControllerSample>().enabled = false;
             for (int i = 0; i < cars.Length; i++)
@@ -38,7 +38,7 @@ public class GameModes : MonoBehaviour
             }
             Destroy(timerPanel);
         }
-        if (Settings.gameMode == "На время")
+        if (GameData.gameMode == "На время")
         {
             for (int i = 0; i < cars.Length; i++)
             {
@@ -46,7 +46,7 @@ public class GameModes : MonoBehaviour
             }
             Destroy(raceTimerPanel);
         }
-        if (Settings.gameMode == "Свободный заезд")
+        if (GameData.gameMode == "Свободный заезд")
         {
             for (int i = 0; i < cars.Length; i++)
             {
@@ -59,21 +59,21 @@ public class GameModes : MonoBehaviour
             Destroy(raceTimerPanel);
             Destroy(finish);
         }
-        if (Settings.gameMode != "Свободный заезд")
+        if (GameData.gameMode != "Свободный заезд")
         {
-            if (Settings.raceTrack == 1)
+            if (GameData.raceTrack == 1)
             {
                 waypoints = checkpoints1;
                 Destroy(secondTrackCheckpoints);
                 Destroy(thirdTrackCheckpoints);
             }
-            if (Settings.raceTrack == 2)
+            if (GameData.raceTrack == 2)
             {
                 waypoints = checkpoints2;
                 Destroy(firstTrackCheckpoints);
                 Destroy(thirdTrackCheckpoints);
             }
-            if (Settings.raceTrack == 3)
+            if (GameData.raceTrack == 3)
             {
                 waypoints = checkpoints3;
                 Destroy(firstTrackCheckpoints);
@@ -83,7 +83,7 @@ public class GameModes : MonoBehaviour
     }
     void Update()
     {
-        if ((Settings.gameMode == "Гонка") && (!start))
+        if ((GameData.gameMode == "Гонка") && (!start))
         {
             if (raceTimer >= 1)
             {
@@ -111,7 +111,7 @@ public class GameModes : MonoBehaviour
                 }
             }
         }
-        if (Settings.gameMode == "На время")
+        if (GameData.gameMode == "На время")
         {
             timer += Time.deltaTime;
             seconds = (int) timer % 60;

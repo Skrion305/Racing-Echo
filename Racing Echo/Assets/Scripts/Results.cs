@@ -36,7 +36,7 @@ public class Results : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (Settings.gameMode == "Гонка")
+        if (GameData.gameMode == "Гонка")
         {
             if ((other.CompareTag("Car")) && (other.GetComponent<AI>().currentLap > 3))
             {
@@ -47,9 +47,9 @@ public class Results : MonoBehaviour
             if ((other.CompareTag("Player")) && (player.laps > 2))
             {
                 other.GetComponent<GameModes>().racingPosition = racingPosition;
-                if ((!Settings.achievement1) && (other.GetComponent<GameModes>().racingPosition == 1))
+                if ((!GameData.achievement1) && (other.GetComponent<GameModes>().racingPosition == 1))
                 {
-                    Settings.achievement1 = true;
+                    GameData.achievement1 = true;
                 }
                 racingPosition++;
                 lastCars.Sort((car1, car2) =>
@@ -146,18 +146,18 @@ public class Results : MonoBehaviour
                 end = true;
             }
         }
-        if ((Settings.gameMode == "На время") && (other.CompareTag("Player")) && (player.laps > 2))
+        if ((GameData.gameMode == "На время") && (other.CompareTag("Player")) && (player.laps > 2))
         {
-            if (player.timer < Settings.record)
+            if (player.timer < GameData.record)
             {
-                Settings.record = player.timer;
+                GameData.record = player.timer;
             }
-            if ((!Settings.achievement2) && (Settings.record <= 3f))
+            if ((!GameData.achievement2) && (GameData.record <= 3f))
             {
-                Settings.achievement2 = true;
+                GameData.achievement2 = true;
             }
-            recordMinutes = (int) Settings.record / 60;
-            recordSeconds = (int) Settings.record % 60;
+            recordMinutes = (int) GameData.record / 60;
+            recordSeconds = (int) GameData.record % 60;
             result.text = "Результат: " + string.Format("{0:00}:{1:00}", player.minutes, player.seconds) + "\nРекорд: " + string.Format("{0:00}:{1:00}", recordMinutes, recordSeconds);
             timerPanel.SetActive(false);
             completing.SetActive(true);

@@ -7,21 +7,21 @@ public class Tracks : MonoBehaviour
     [SerializeField] GameObject[] objectsToDelete3;
     void Start()
     {
-        if (Settings.raceTrack == 1)
+        if (GameData.raceTrack == 1)
         {
             for (int i = 0; i < objectsToDelete1.Length; i++)
             {
                 Destroy(objectsToDelete1[i]);
             }
         }
-        if (Settings.raceTrack == 2)
+        if (GameData.raceTrack == 2)
         {
             for (int i = 0; i < objectsToDelete2.Length; i++)
             {
                 Destroy(objectsToDelete2[i]);
             }
         }
-        if (Settings.raceTrack == 3)
+        if (GameData.raceTrack == 3)
         {
             for (int i = 0; i < objectsToDelete3.Length; i++)
             {

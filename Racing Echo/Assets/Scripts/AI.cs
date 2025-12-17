@@ -28,15 +28,15 @@ public class AI : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        if (Settings.raceTrack == 1)
+        if (GameData.raceTrack == 1)
         {
             waypoints = checkpoints1;
         }
-        if (Settings.raceTrack == 2)
+        if (GameData.raceTrack == 2)
         {
             waypoints = checkpoints2;
         }
-        if (Settings.raceTrack == 3)
+        if (GameData.raceTrack == 3)
         {
             waypoints = checkpoints3;
         }
