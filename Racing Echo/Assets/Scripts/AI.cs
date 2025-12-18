@@ -47,10 +47,10 @@ public class AI : MonoBehaviour
         {
             if (timer < 1f)
             {
-                frontLeftWheel.motorTorque = 700f;
-                frontRightWheel.motorTorque = 700f;
-                rearLeftWheel.motorTorque = 700f;
-                rearRightWheel.motorTorque = 700f;
+                frontLeftWheel.motorTorque = 500f;
+                frontRightWheel.motorTorque = 500f;
+                rearLeftWheel.motorTorque = 500f;
+                rearRightWheel.motorTorque = 500f;
                 frontLeftWheel.steerAngle = 0;
                 frontRightWheel.steerAngle = 0;
                 timer += Time.fixedDeltaTime;
@@ -73,7 +73,7 @@ public class AI : MonoBehaviour
             steer = Mathf.Clamp(angle / 30f, -1f, 1f);
             frontLeftWheel.steerAngle = 30 * steer;
             frontRightWheel.steerAngle = 30 * steer;
-            currentMotorTorque = 2000f;
+            currentMotorTorque = 500f;
             brakeForce = 0f;
             if (currentPoint + 1 < waypoints.Length)
             {
@@ -85,20 +85,20 @@ public class AI : MonoBehaviour
                     dist = Vector3.Distance(transform.position, target.position);
                     if (dist < 10f)
                     {
-                        currentMotorTorque *= 0.5f;
+                        currentMotorTorque *= 0.7f;
                     }
                 }
             }
             if (Mathf.Abs(steer) > 0.3f)
             {
-                currentMotorTorque = Mathf.Lerp(2000f, 500f, Mathf.Abs(steer));
+                currentMotorTorque = Mathf.Lerp(500f, 300f, Mathf.Abs(steer));
                 if (Mathf.Abs(steer) == 1f)
                 {
                     brakeForce = 0;
                 }
                 else if (Mathf.Abs(steer) > 0.7f)
                 {
-                    brakeForce = 1000f * Mathf.Abs(steer);
+                    brakeForce = 300f * Mathf.Abs(steer);
                 }
             }
             frontLeftWheel.brakeTorque = brakeForce;
@@ -127,20 +127,17 @@ public class AI : MonoBehaviour
                 frontRightWheel.motorTorque = 0;
                 rearLeftWheel.motorTorque = 0;
                 rearRightWheel.motorTorque = 0;
-                frontLeftWheel.brakeTorque = 5000f;
-                frontRightWheel.brakeTorque = 5000f;
-                rearLeftWheel.brakeTorque = 5000f;
-                rearRightWheel.brakeTorque = 5000f;
+                frontLeftWheel.brakeTorque = 1000f;
+                frontRightWheel.brakeTorque = 1000f;
+                rearLeftWheel.brakeTorque = 1000f;
+                rearRightWheel.brakeTorque = 1000f;
                 enabled = false;
             }
         }
     }
     void OnCollisionEnter()
     {
-        if ((rb.linearVelocity.magnitude < 10f) || (currentMotorTorque < 700f))
-        {
-            timer = 0f;
-            obstacle = true;
-        }
+        timer = 0f;
+        obstacle = true;
     }
 }
