@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using _2DOF;
 using UnityEngine;
-using LogitechG29.Sample.Input;
 
 public class CarTelemetryHandler : MonoBehaviour
 {
@@ -13,13 +12,13 @@ public class CarTelemetryHandler : MonoBehaviour
 
     private ObjectTelemetryData _telemetryDataData;
     private SendingData _sendingData;
-    Vector3 lastVelocity;
-    [SerializeField] InputControllerReader inputControllerReader;
+    Vector3 currentTiltAngles;
+    Vector3 targetTiltAngles;
+
     private void Awake()
     {
         _sendingData = new SendingData();
         _telemetryDataData = _sendingData.ObjectTelemetryData;
-        lastVelocity = Vector3.zero;
     }
 
     public void OnEnable()
@@ -30,7 +29,7 @@ public class CarTelemetryHandler : MonoBehaviour
 
     public void OnDisable()
     {
-        StopAllCoroutines();
+        StopCoroutine(TelemetryHandler());
         _sendingData.SendingStop();
     }
 
@@ -46,6 +45,7 @@ public class CarTelemetryHandler : MonoBehaviour
 
             UpdateAngles();
             UpdateVelocity();
+            UpdatePlatformTilt();
 
             //Debug.Log(_telemetryDataData.ToString());
 
@@ -60,43 +60,43 @@ public class CarTelemetryHandler : MonoBehaviour
 
     private void UpdateAngles()
     {
-        Vector3 currentVelocity = rigidbody.linearVelocity;
-        Vector3 acceleration = (currentVelocity - lastVelocity) / Time.deltaTime;
-        Vector3 angles = new Vector3(Mathf.Clamp(acceleration.z, -15f, 15f), 0f, Mathf.Clamp(-inputControllerReader.Steering * 2f, -15f, 15f));
-        _telemetryDataData.Angles = angles;
-        lastVelocity = currentVelocity;
+        var euler = vehicleTransform.eulerAngles;
+
+        euler.x = Mathf.Approximately(euler.x, 180) ? 0 : euler.x;
+        euler.z = Mathf.Approximately(euler.z, 180) ? 0 : euler.z;
+        euler.y = Mathf.Approximately(euler.y, 180) ? 0 : euler.y;
+
+        euler.x = euler.x > 180 ? euler.x - 360 : euler.x;
+        euler.z = euler.z > 180 ? euler.z - 360 : euler.z;
+        euler.y = euler.y > 180 ? euler.y - 360 : euler.y;
+
+        _telemetryDataData.Angles = euler;
     }
-    public void TriggerSharpTurn(float intensity)
+    void UpdatePlatformTilt()
     {
-        StartCoroutine(SharpTurn(intensity));
+        Vector3 acceleration = Acceleration();
+        float targetTiltX = acceleration.z * 2f;
+        targetTiltX = Mathf.Clamp(targetTiltX, -15f, 15f);
+        targetTiltAngles = new Vector3(targetTiltX, 0f, 0f);
+        currentTiltAngles = Vector3.Lerp(currentTiltAngles, targetTiltAngles, 20f * Time.deltaTime);
+        Vector3 finalAngles = CurrentVehicleAngles() + currentTiltAngles;
+        _telemetryDataData.Angles = finalAngles;
     }
-    public void TriggerAcceleration(float intensity)
+    Vector3 Acceleration()
     {
-        StartCoroutine(Acceleration(intensity));
+        Vector3 velocity = rigidbody.linearVelocity;
+        Vector3 acceleration = (velocity - _telemetryDataData.Velocity) / Time.deltaTime;
+        return vehicleTransform.InverseTransformDirection(acceleration);
     }
-    public void TriggerBraking(float intensity)
+    Vector3 CurrentVehicleAngles()
     {
-        StartCoroutine(Braking(intensity));
-    }
-    IEnumerator SharpTurn(float intensity)
-    {
-        Vector3 originalAngles = _telemetryDataData.Angles;
-        _telemetryDataData.Angles = new Vector3(originalAngles.x, 0, Mathf.Clamp(intensity * 10f, -15f, 15f));
-        yield return new WaitForSeconds(0.5f);
-        _telemetryDataData.Angles = originalAngles;
-    }
-    IEnumerator Acceleration(float intensity)
-    {
-        Vector3 originalAngles = _telemetryDataData.Angles;
-        _telemetryDataData.Angles = new Vector3(Mathf.Clamp(intensity * 8f, -15f, 15f), 0, originalAngles.z);
-        yield return new WaitForSeconds(0.3f);
-        _telemetryDataData.Angles = originalAngles;
-    }
-    private IEnumerator Braking(float intensity)
-    {
-        Vector3 originalAngles = _telemetryDataData.Angles;
-        _telemetryDataData.Angles = new Vector3(Mathf.Clamp(-intensity * 8f, -15f, 15f), 0, originalAngles.z);
-        yield return new WaitForSeconds(0.3f);
-        _telemetryDataData.Angles = originalAngles;
+        var euler = vehicleTransform.eulerAngles;
+        euler.x = Mathf.Approximately(euler.x, 180) ? 0 : euler.x;
+        euler.z = Mathf.Approximately(euler.z, 180) ? 0 : euler.z;
+        euler.y = Mathf.Approximately(euler.y, 180) ? 0 : euler.y;
+        euler.x = euler.x > 180 ? euler.x - 360 : euler.x;
+        euler.z = euler.z > 180 ? euler.z - 360 : euler.z;
+        euler.y = euler.y > 180 ? euler.y - 360 : euler.y;
+        return euler;
     }
 }
